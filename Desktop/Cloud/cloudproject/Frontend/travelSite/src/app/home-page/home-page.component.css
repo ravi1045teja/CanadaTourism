@@ -1,0 +1,66 @@
+h2 {
+    font-family: montserrat;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.mat-toolbar {
+    background: #847d7d;
+    color: #111010;
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.mat-card {
+    background: #a29a9a;
+    color: #fffdfd;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    height: inherit;
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 12px;
+    margin-left: 325px;
+}
+
+.mat-card-title {
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.mat-card-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.mat-card-actions,
+.mat-card-content,
+.mat-card-subtitle {
+    display: block;
+    margin-bottom: 16px;
+    margin-left: 325px;
+}
+
+.mat-card-subtitle {
+    color: black;
+}
+
+.mat-card-content,
+.mat-card-subtitle {
+    font-size: 20px;
+}

@@ -1,0 +1,62 @@
+<div class="navigationlor">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="brand d-none d-sm-block" (click)="homepage()" style="cursor: pointer;">
+            <a class="navbar-brand">
+                <img src="" width="30" height="30" class="d-inline-block align-top" alt="" (click)="navigate()"> Tourism for all</a>
+        </div>
+        <button class="navbar-toggler">
+    <span class="navbar-toggler-icon" data-toggle="collapse" data-target="#menuC">
+    </span>
+    </button>
+
+        <div class="collapse navbar-collapse align-self-end" id="menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item lor-menus">
+                    <a class="nav-link"><i class="fas fa-bell fa" style='font-size:24px' data-toggle="tooltip" title="Notifications"></i></a>
+                </li>
+                <li class="navbar-item lor-menus">
+                    <a class="nav-link" (click)="cart()"><i class="fas fa-shopping-cart" style='font-size:24px' data-toggle="tooltip" title="Cart"></i></a>
+                </li>
+                <li class="nav-item dropdown lor-menus">
+                    <a class="nav-link dropdown-toggle btn" id="profileDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"  data-toggle="tooltip" title="Profile" style='font-size:24px'></i>
+            </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="profileDropDown">
+                        <a *ngIf="loginShow" class="dropdown-item" (click)="login()">Sign in</a>
+                        <!-- <a *ngIf="loginShow" class="dropdown-item"  (click)="register()">Register</a> -->
+                        <a *ngIf="!loginShow" class="dropdown-item" (click)="myBooking()">My Bookings</a>
+                        <a *ngIf="!loginShow" class="dropdown-item" (click)="homepage()">Log out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="d-sm-none">
+            <div class="collapse navbar-collapse align-self-end" id="menuC">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item lor-menuC">
+                        <a class="nav-link">Notifications</a>
+                    </li>
+                    <li class="navbar-item lor-menuC">
+                        <a class="nav-link">Cart</a>
+                    </li>
+                    <li class="navbar-item lor-menuC">
+                        <a class="nav-link" (click)="homepage()">Home</a>
+                    </li>
+                    <li class="navbar-item lor-menuC">
+
+                        <a class="nav-link" (click)="homepage()">Log out</a>
+                    </li>
+                    <li class="nav-item dropdown lor-menuCD">
+                        <a class="nav-link dropdown-toggle btn lor-menuCDA" id="profileDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile</a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="profileDropDown">
+                            <a class="dropdown-item" (click)="login()">My account</a>
+                            <a class="dropdown-item" (click)="register()">Register</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<router-outlet (activate)="onLogin($event)"></router-outlet>

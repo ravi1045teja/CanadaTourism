@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <mat-form-field style="width: 100%" floatLabel='never'>
+        <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
+    </mat-form-field>
+</mat-toolbar>
+
+
+<a *ngFor="let tour of tours | filter : searchText">
+
+    <mat-card matRipple matRippleColor="blue" style="padding: 2rem; margin: 2rem; min-width: 20rem;border-right-style: solid;
+    border-right-width: 250px;
+    border-left-width: 250px;
+    border-left-style: solid" [routerLink]="['/viewDestination',tour.id]">
+        <img md-card-image [src]='tour.imagePath'>
+        <mat-card-header>
+            <mat-card-title>
+                {{ tour.name }}
+            </mat-card-title>
+            <mat-card-subtitle>{{ tour.location }}</mat-card-subtitle>
+        </mat-card-header>
+
+
+    </mat-card>
+
+</a>

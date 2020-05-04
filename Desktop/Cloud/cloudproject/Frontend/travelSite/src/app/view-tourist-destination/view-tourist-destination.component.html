@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="one">
+        <img [src]='tour.imagePath' class="tourImage">
+    </div>
+    <div class="two">
+        <h2 class="title">{{tour.name}}</h2><br>
+        <h3 class="subtitle">{{tour.location}}</h3><br>
+        <h2 class="keyF">Keyfeatures</h2><br>
+        <p class="features">{{tour.keyFeatures}}</p>
+        <h4 class="submit">Love this place!! Dont wait to travel? book a ticket!!</h4>
+        <button class="book" mat-stroked-button color="accent" (click)="book()">Book Ticket</button>
+
+    </div>
+</div>

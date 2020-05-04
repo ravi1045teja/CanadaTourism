@@ -1,0 +1,93 @@
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <form>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Departing From</span>
+                                    <select class="form-control" [(ngModel)]="selectedSource" (change)="selectedSrc()" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let item of packages" [ngValue]="item">{{item.source}}</option>
+
+                                    </select>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Destination</span>
+                                    <select class="form-control" [(ngModel)]="selectedDestination" (change)="selectedDest()" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let item of packages" [ngValue]="item" >{{item.destination}}</option>
+                                        
+                                    </select>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Departing</span>
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="picker" [min]="dateMinArrival" (dateChange)="changeEvent($event)" [(ngModel)]="departing">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker [(ngModel)]="departing" ngDefaultControl (selectedChanged)="departDate($event)"></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Returning</span>
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="picker2" [min]="dateMinArrival" (dateChange)="changeEvent2($event)" [(ngModel)]="returning">
+                                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2 [(ngModel)]="returning" ngDefaultControl (selectedChanged)="returningDate($event)"></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+
+                                <div class="form-group">
+                                    <div class="form-btn">
+
+                                        <button class="submit-btn">Price : {{selectedDestination.price}}</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Credit Card </span>
+                                    <input #cardNumber class="form-control" type="number" required placeholder="Enter Card Number">
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label">CVV </span>
+                                    <input #cardNumber2 class="form-control" type="password" required placeholder="cvv">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-4">
+                                <div class="form-btn">
+                                    <button class="submit-btn" (click)="pay(cardNumber.value)">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{creditCard}}

@@ -1,0 +1,103 @@
+<!-- https://medium.com/wdstack/bootstrap-4-form-examples-c18ac5e9cd30 was used as reference -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h4 class="mb-0">Login</h4>
+                </div>
+
+                <div class="card-body">
+                    <form class="customForm needs-validation" [formGroup]="loginForm"  id="loginForm"
+                        novalidate="" >
+
+                        <div class="form-group">
+
+                            <input type="email" name="username" id="username" placeholder="Email" class="form-control"
+                                formControlName="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            <div *ngIf="(loginForm.get('username').invalid && onInit) || 
+                                (loginForm.get('username').invalid && (loginForm.get('username').dirty ||
+                                      loginForm.get('username').touched))" class="alert alert-danger">
+                                <div *ngIf="loginForm.get('username').errors.required">
+                                    Please provide Email address
+                                </div>
+                                <div *ngIf="loginForm.get('username').errors.pattern">
+                                    Please provide correct Email address
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="password" name="password" id="password" placeholder="Password"
+                                class="form-control" formControlName="password">
+                            <div *ngIf="(loginForm.get('password').invalid && onInit) || 
+                                (loginForm.get('password').invalid && (loginForm.get('password').dirty ||
+                                      loginForm.get('password').touched))" class="alert alert-danger">
+
+                                <div *ngIf="loginForm.get('password').errors.required">
+                                    Password can't be empty
+                                </div>
+                                <div *ngIf="loginForm.get('password').errors.maxlength">
+                                    Password can be maximum of 20 characters.
+                                </div>
+                                <div *ngIf="loginForm.get('password').errors.minlength">
+                                    Password must be at least 6 characters long.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6  col-xl-6">
+                                <a id="forgotPassword" data-toggle="modal" href="#forgotPwd">
+                                    Forgot Password
+                                </a>
+                            </div>
+
+                            <div class=" col-md-3 col-sm-3 col-lg-3 col-xl-3 mx-auto">
+
+                                <button type="submit" class="btn btn-dark btn-sm" id="btnLogin"
+                                    (click)="onRegister()">Register</button>
+
+                            </div>
+                            <div class=" col-md-3 col-sm-3 col-lg-3 col-xl-3 mx-auto">
+
+                                <button type="submit" class="btn btn-info btn-sm" id="btnLogin"
+                                    (click)="onLogin()">Login</button>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="forgotPwd">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Forgot Passoword</h3>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <p>Enter email to reset password</p>
+                        <input type="email" name="fpusername" id="fpusername" placeholder="Email" class="form-control"
+                           >
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

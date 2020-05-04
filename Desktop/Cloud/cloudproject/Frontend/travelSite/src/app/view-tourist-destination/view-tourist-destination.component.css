@@ -1,0 +1,70 @@
+.container {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+}
+
+.one {
+    align-content: center;
+    grid-row: 1;
+}
+
+.two {
+    align-content: center;
+    grid-row: 2
+}
+
+.tourImage {
+    width: 100%;
+}
+
+.container {
+    padding: 5%;
+    align-content: center;
+}
+
+.title {
+    padding-left: 325px;
+    padding-right: 250px;
+}
+
+.subtitle {
+    padding-left: 325px;
+    padding-right: 250px;
+}
+
+.keyF,
+.features {
+    padding-left: 325px;
+    padding-right: 250px;
+}
+
+.submit {
+    padding-left: 125px;
+    padding-right: 100px;
+}
+
+.book {
+    border-bottom-width: 10px;
+    left: 325px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.mat-stroked-button:not([disabled]) {
+    border-color: rgba(204, 23, 23, 0.12);
+}
+
+.mat-flat-button:not([class*="mat-elevation-z"]),
+.mat-stroked-button:not([class*="mat-elevation-z"]) {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .2), 0 0 0 0 rgba(0, 0, 0, .14), 0 0 0 0 rgba(0, 0, 0, .12);
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+    color: #0a6795;
+}

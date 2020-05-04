@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-card type="ticket" class="--flex-column">
+        <div class="top --flex-column">
+
+            <div style="text-align: center;"><a class="buy" href="#">BUS TICKET</a></div>
+            <br>
+            <div class="bandname -bold" style="padding-left: 35%;"> ENJOY JOURNEY!</div>
+            <div class="tourname" style="padding-left: 32%;">Canada Tourism App</div>
+
+            <div class="tourname" style="padding-left: 30%;">
+                <small>Bus starts at specified time at departure <b></b></small></div>
+
+            <div class="deetz --flex-row-j!sb " style="padding-left: 32%;">
+                <div class="event --flex-column">
+                    <div class="date">Departure : {{ticket.departing}}</div>
+                    <div class="location -bold">Arrival: {{ticket.returning}}</div>
+                </div>
+
+                <div class="price --flex-column" style="padding-left: 10%;">
+                    <div class="label">Price</div>
+                    <div class="cost -bold">{{ticket.ticketPrice}}</div>
+
+                </div>
+
+            </div>
+            <div style="text-align: center;"><small>Terms & Conditions Apply</small></div>
+            <div style="text-align: center;"><small>www.csci5409.ca</small></div>
+        </div>
+        <div class="rip"></div>
+        <div class="bottom --flex-row-j!sb">
+            <div class="barcode"></div>
+
+            <br>
+
+        </div>
+        <br>
+
+    </mat-card>
+</div>
